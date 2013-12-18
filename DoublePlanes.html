@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Rotating Plane</title>
+    <style>
+
+    .spinner{
+      width:30px;
+      height:30px;
+      position: relative;
+      margin: 100px auto;
+    }
+
+    .cube1, .cube2 {
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      opacity: 0.6;
+      position: absolute;
+
+      -webkit-animation: rotateplane 2s infinite ease-in-out;
+      animation: rotateplane 2s infinite ease-in-out;
+    }
+
+    .cube2{
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+   @-webkit-keyframes rotateplane {
+      0% { -webkit-transform: perspective(120px) scale(1.0)}
+      50% { -webkit-transform: perspective(120px) rotateX(180deg) scale(0.1) }
+      100% { -webkit-transform: perspective(120px) rotateX(0deg) scale(1.0)}
+    }
+
+    @keyframes rotateplane {
+      0% { transform: perspective(120px) rotateX(0deg) rotateY(0deg) }
+      50% { transform: perspective(120px) rotateX(0deg) } 
+      100% { transform: perspective(120px) rotateX(0deg)  }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+  </body>
+</html>
